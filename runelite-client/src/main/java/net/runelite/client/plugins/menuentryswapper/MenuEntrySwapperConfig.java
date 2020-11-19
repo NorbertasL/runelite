@@ -341,6 +341,16 @@ public interface MenuEntrySwapperConfig extends Config
 	{
 		return false;
 	}
+	@ConfigItem(
+			keyName = "swapPrivateGW",
+			name = "Private GW",
+			description = "Swap private public doors in GodWars",
+			section = objectSection
+	)
+	default boolean swapPrivateGW()
+	{
+		return false;
+	}
 
 	@ConfigItem(
 		keyName = "swapPick",

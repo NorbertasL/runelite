@@ -218,6 +218,9 @@ public class MenuEntrySwapperPlugin extends Plugin
 		swap("pass", "energy barrier", "pay-toll(2-ecto)", config::swapTravel);
 		swap("open", "gate", "pay-toll(10gp)", config::swapTravel);
 
+
+
+
 		swap("open", "hardwood grove doors", "quick-pay(100)", config::swapHardWoodGrove);
 
 		swap("inspect", "trapdoor", "travel", config::swapTravel);
@@ -243,6 +246,8 @@ public class MenuEntrySwapperPlugin extends Plugin
 		swapContains("configure", alwaysTrue(), "last-destination", () ->
 			config.swapFairyRing() == FairyRingMode.LAST_DESTINATION || config.swapFairyRing() == FairyRingMode.ZANARIS);
 		swapContains("tree", alwaysTrue(), "zanaris", () -> config.swapFairyRing() == FairyRingMode.ZANARIS);
+
+
 
 		swap("check", "reset", config::swapBoxTrap);
 		swap("dismantle", "reset", config::swapBoxTrap);
@@ -294,6 +299,7 @@ public class MenuEntrySwapperPlugin extends Plugin
 		swap("teleport menu", "al kharid", config::swapJewelleryBox);
 
 		swap("shared", "private", config::swapPrivate);
+		swap("open (normal)", "open (private)", config::swapPrivateGW);
 
 		swap("pick", "pick-lots", config::swapPick);
 
@@ -344,6 +350,8 @@ public class MenuEntrySwapperPlugin extends Plugin
 		swapTeleport("camelot teleport", "seers'");
 		swapTeleport("watchtower teleport", "yanille");
 		swapTeleport("teleport to house", "outside");
+
+
 	}
 
 	private void swap(String option, String swappedOption, Supplier<Boolean> enabled)
